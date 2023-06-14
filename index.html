@@ -1,6 +1,60 @@
 <html>
   <head>
     <title>cryptidcave</title>
+    <style>
+      /* Styles for desktop screens */
+      @media only screen and (min-width: 768px) {
+        body {
+          display: flex;
+        }
+        .sidebar {
+          width: 20%;
+          background: #eee;
+          height: 100vh;
+        }
+        .content {
+          width: 80%;
+          background: #999;
+          color: #fff;
+          height: 100vh;
+          font-size: 50px;
+        }
+      }
+
+      /* Styles for mobile screens */
+      @media only screen and (max-width: 767px) {
+        .sidebar {
+          width: 100%;
+          background: #eee;
+          height: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+        .sidebar ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+        }
+        .sidebar li {
+          margin: 5px;
+        }
+        .sidebar li::before {
+          content: none;
+        }
+        .content {
+          width: 100%;
+          background: #999;
+          color: #fff;
+          height: auto;
+          font-size: 30px;
+        }
+      }
+    </style>
   </head>
   <script>
     var pages = {
@@ -86,7 +140,27 @@
   </script>
 
   <body onload="getPageContent('home')">
-    <div style="width: 20%; float: left; background: #eee; height: 100%">
+    <div class="sidebar">
+      <ul>
+        <li style="line-height: 50px; list-style-type: none">
+          <a href="#" onclick="getPageContent('home')"> Home </a>
+        </li>
+        <li style="line-height: 50px; list-style-type: none">
+          <a href="#" onclick="getPageContent('aboutus')"> About Them </a>
+        </li>
+        <li style="line-height: 50px; list-style-type: none">
+          <a href="#" onclick="getPageContent('services')"> Services </a>
+        </li>
+        <li style="line-height: 50px; list-style-type: none">
+          <a href="#" onclick="getPageContent('contact')"> Contact </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <p style="margin: 5%" id="content"></p>
+    </div>
+
+    <!-- <div style="width: 20%; float: left; background: #eee; height: 100%">
       <ul>
         <li style="line-height: 50px; list-style-type: square">
           <a href="#" onclick="getPageContent('home')"> Home </a>
@@ -113,6 +187,6 @@
       "
     >
       <p style="margin: 5%" id="content"></p>
-    </div>
+    </div> -->
   </body>
 </html>
