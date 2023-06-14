@@ -1,6 +1,13 @@
 <html>
   <head>
-    <title>cryptidcave</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore the mystical world of The Nymph and discover their services in content creation, traditional art, and front-end development. Contact The Cryptid today!"
+    />
+
+    <title>cryptidcave - The Nymph's Cave of Wonders</title>
     <style>
       /* Styles for desktop screens */
       @media only screen and (min-width: 768px) {
@@ -132,7 +139,8 @@
           contentToReturn = pages.contact;
           break;
         default:
-          contentToReturn = pages.home;
+          contentToReturn =
+            "<h3>Page not found/nWe apologize for the inconvenience.</h3>";
           break;
       }
       document.getElementById("content").innerHTML = contentToReturn;
