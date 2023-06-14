@@ -61,6 +61,19 @@
           font-size: 30px;
         }
       }
+      /* Added styles for dark mode */
+      .dark-mode {
+        background: #333;
+        color: #fff;
+      }
+
+      .dark-mode .sidebar {
+        background: #555;
+      }
+
+      .dark-mode .content {
+        background: #222;
+      }
     </style>
   </head>
   <script>
@@ -145,6 +158,10 @@
       }
       document.getElementById("content").innerHTML = contentToReturn;
     }
+    function toggleMode() {
+      var bodyElement = document.body;
+      bodyElement.classList.toggle("dark-mode");
+    }
   </script>
 
   <body onload="getPageContent('home')">
@@ -163,6 +180,8 @@
           <a href="#" onclick="getPageContent('contact')"> Contact </a>
         </li>
       </ul>
+      <br />
+      <button onclick="toggleMode()">Toggle Mode</button>
     </div>
     <div class="content">
       <p style="margin: 5%" id="content"></p>
